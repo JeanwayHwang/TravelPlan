@@ -106,9 +106,17 @@ a{color:inherit}.wrap{max-width:1060px;margin:auto;padding:0 18px}.topbar{displa
     <details class="day"><summary><span class="day-num">DAY 15</span><span class="day-title">10/03 · 返程</span><span class="day-city">Lisbon → Hangzhou · UTC+1 → UTC+8</span></summary><div class="day-body"><div class="day-actions"><a class="action primary" target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=EasyHotel+Lisbon&destination=Humberto+Delgado+Airport+Terminal+1&travelmode=transit">酒店 → 里斯本机场</a></div><div class="timeline"><div class="stop"><div class="stop-time">11:55</div><div class="stop-dot"></div><div><h4>JD622 · 里斯本 T1 → 杭州 T4</h4><p>跨日抵达，次日 07:55（杭州当地 UTC+8）</p></div></div></div></div></details>
   </section>
 
+  <section class="section" id="food"><div class="section-head"><h2>美食备忘</h2><div class="section-note">按城市整理 · 地点可直接导航</div></div><div class="food-grid">
+    <article class="food-city"><h3>马德里</h3><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Chocolateria+San+Gines+Madrid">Chocolatería San Ginés</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Meson+del+Champinon+Madrid">Mesón del Champiñón</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Caracola+Anton+Martin+Madrid">Caracola Antón Martín</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Restaurant+La+Campana+Madrid">Restaurant La Campana</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Vinitus+Gran+Via+Madrid">Vinitus Gran Via</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Casa+Labra+Madrid">Casa Labra</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=El+Sur+de+Moratin+Madrid">El Sur de Moratín</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=La+Castela+Madrid">La Castela</a></article>
+    <article class="food-city"><h3>尼斯</h3><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Ruhl+Plage+Nice">Ruhl Plage</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Le+Galet+Nice">Le Galet</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Rouge+Restaurant+Nice">Rouge Restaurant</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Chez+Acchiardo+Nice">Chez Acchiardo</a></article>
+    <article class="food-city"><h3>巴黎</h3><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Bistrot+Victoires+Paris">Bistrot Victoires</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Biubiu+Paris+malatang">Biubiu 麻辣烫</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Les+Antiquaires+Paris">Les Antiquaires</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Pain+de+mie+Paris">Pain de mie</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Pink+Mamma+Paris">Pink Mamma</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Le+Train+Bleu+Paris">Le Train Bleu</a></article>
+    <article class="food-city"><h3>巴塞罗那</h3><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Jon+Cake+Coffee+Barcelona">Jon Cake & Coffee</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=La+Flauta+Barcelona">La Flauta</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Vinitus+Barcelona">Vinitus</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Bar+Canete+Barcelona">Bar Cañete</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=El+Glop+Gaudi+Barcelona">El Glop Gaudí</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=El+Xampanyet+Barcelona">El Xampanyet</a></article>
+    <article class="food-city"><h3>里斯本</h3><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Maria+Catita+Lisbon">Maria Catita</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Arrozaria+By+Uma+Marisqueira+Cataplana+LX">Arrozaria · Uma</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Breakfast+Lovers+Lisbon">Breakfast Lovers</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Pomme+Eatery+Lisbon">Pomme Eatery</a></article>
+  </div></section>
   <footer class="footer">公开旅行手册 · 不含订单号、确认号、证件号、房间号</footer>
 </main>
 <script>
+document.querySelector(".route-map")?.closest(".section")?.remove();
 const events=[
   {at:"2026-09-19T00:05:00+08:00",title:"EK303 起飞 · 上海浦东 T2",meta:"2026/09/19 00:05 · 中国标准时间 UTC+8"},
   {at:"2026-09-19T07:45:00+04:00",title:"EK141 起飞 · 迪拜 T3",meta:"2026/09/19 07:45 · 海湾标准时间 UTC+4"},
@@ -195,6 +203,40 @@ function linkPlacesInHeadings(){
     });
   });
 }
+const compoundStops={
+  "英国人散步大道 · 蓝椅子 · 天使海湾 · 城堡山 60 + 15 + 35 + 50min":[["英国人散步大道","60min"],["蓝椅子","15min"],["天使海湾","35min"],["城堡山","50min"]],
+  "蒙特卡洛赌场 · 摩纳哥港口 · F1赛道 · 摩纳哥老城 35 + 30 + 25 + 60min":[["蒙特卡洛赌场","35min"],["摩纳哥港口","30min"],["F1赛道","25min"],["摩纳哥老城","60min"]],
+  "莎士比亚书店 30min → 巴黎圣母院 30min":[["莎士比亚书店","30min"],["巴黎圣母院","30min"]],
+  "杜乐丽花园 30min → 协和广场 30min":[["杜乐丽花园","30min"],["协和广场","30min"]],
+  "香榭丽舍大街 1h → 凯旋门 1h":[["香榭丽舍大街","1h"],["凯旋门","1h"]],
+  "巴黎歌剧院 1h · 老佛爷百货 1h":[["巴黎歌剧院","1h"],["老佛爷百货","1h"]],
+  "圣心大教堂 1h · 红磨坊 2h":[["圣心大教堂","1h"],["红磨坊","2h"]],
+  "哥特区 1h → 巴塞罗那主教堂 40min":[["哥特区","1h"],["巴塞罗那主教堂","40min"]],
+  "亲吻墙 20min → 巴塞罗那海滩 1h":[["亲吻墙","20min"],["巴塞罗那海滩","1h"]],
+  "圣卢西亚观景台 30min → 商业广场 30min":[["圣卢西亚观景台","30min"],["商业广场","30min"]],
+  "奥古斯塔街 → 圣胡斯塔升降机 1h":[["奥古斯塔街","待定"],["圣胡斯塔升降机","1h"]],
+  "里斯本主教堂 40min → 圣若热城堡 1.5h":[["里斯本主教堂","40min"],["圣若热城堡","1.5h"]],
+  "比卡升降机 30min → Timeout Market 2h":[["比卡升降机","30min"],["Timeout Market","2h"]],
+  "贝伦蛋挞店 30min → 发现者纪念碑 40min":[["贝伦蛋挞店","30min"],["发现者纪念碑","40min"]],
+  "贝伦塔 1.5h → Tejo Promenade 公园 1h":[["贝伦塔","1.5h"],["Tejo Promenade公园","1h"]]
+};
+function splitCompoundStops(){
+  document.querySelectorAll(".stop").forEach(stop=>{
+    if(stop.classList.contains("transfer"))return;
+    const heading=stop.querySelector("h4"), key=heading?.textContent.trim(), items=compoundStops[key];
+    if(!items)return;
+    const time=stop.querySelector(".stop-time")?.textContent.trim()||"随后", parent=stop.parentElement;
+    items.forEach(([name,duration],i)=>{
+      const next=stop.cloneNode(true), nextHeading=next.querySelector("h4"), note=next.querySelector("p");
+      next.querySelector(".stop-time").textContent=i===0?time:"随后";
+      nextHeading.textContent=name+" ";
+      const durationEl=document.createElement("span");durationEl.className="duration";durationEl.textContent=duration;nextHeading.append(durationEl);
+      if(note)note.remove();
+      parent.insertBefore(next,stop);
+    });
+    stop.remove();
+  });
+}
 const transferStops={
   0:[["抵达后","马德里机场 T4S → Leonardo Hotel Madrid City Center","机场抵达后先到酒店寄存行李"]],
   2:[["最晚18:30","回 Leonardo Hotel Madrid City Center 取行李 → 马德里机场 T4","必须回酒店时间：最晚 18:30；22:10 航班，预留机场交通与值机"]],
@@ -259,6 +301,7 @@ document.querySelectorAll(".day").forEach((day,index)=>{
   actions.after(chips);chips.after(mini);
   mapButton.addEventListener("click",()=>{const show=mini.style.display!=="block";mini.style.display=show?"block":"none";mapButton.textContent=show?"收起当日路线图":"展开当日路线图"});
 });
+splitCompoundStops();
 addTransferStops();
 reorderTravelStops();
 linkPlacesInHeadings();
