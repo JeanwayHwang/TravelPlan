@@ -336,7 +336,6 @@ function setupRestaurantCards(){
     const xhs=document.createElement("a");
     xhs.className="xhs-button";
     xhs.href=`xhsdiscover://search/result?keyword=${encodeURIComponent(name)}`;
-    xhs.dataset.webFallback=`https://www.xiaohongshu.com/search_result?keyword=${encodeURIComponent(name)}`;
     xhs.setAttribute("aria-label",`在小红书搜索 ${name}`);
     xhs.textContent="小红书";
     head.append(link,xhs);
@@ -349,8 +348,8 @@ function setupRestaurantCards(){
   foodSection?.addEventListener("click",event=>{
     const button=event.target.closest(".xhs-button");
     if(!button)return;
-    const timer=window.setTimeout(()=>{if(!document.hidden)window.location.assign(button.dataset.webFallback)},900);
-    document.addEventListener("visibilitychange",()=>{if(document.hidden)window.clearTimeout(timer)},{once:true});
+    event.preventDefault();
+    window.location.href=button.href;
   });
 }
 function setupFoodCarousel(){
