@@ -449,6 +449,28 @@ function directionsUrl(stops){
   if(stops.length>2)params.set("waypoints",stops.slice(1,-1).join("|"));
   return "https://www.google.com/maps/dir/?"+params.toString();
 }
+function setupGoogleMapsAppLinks(){
+  document.addEventListener("click",event=>{
+    const link=event.target.closest('a[href*="google.com/maps"]');
+    if(!link)return;
+    event.preventDefault();
+    const webUrl=link.href;
+    const userAgent=navigator.userAgent||"";
+    const isIOS=/iPad|iPhone|iPod/.test(userAgent)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);
+    const isAndroid=/Android/i.test(userAgent);
+    if(isIOS){
+      window.open(webUrl.replace(/^https?:\/\/(?:www\.)?google\.com\//,"comgooglemapsurl://maps.google.com/"),"_blank","noopener");
+      return;
+    }
+    if(isAndroid){
+      const appPath=webUrl.replace(/^https?:\/\//,"");
+      const fallback=encodeURIComponent(webUrl);
+      window.open(`intent://${appPath}#Intent;scheme=https;package=com.google.android.apps.maps;S.browser_fallback_url=${fallback};end`,`_blank`,`noopener`);
+      return;
+    }
+    window.open(webUrl,"_blank","noopener");
+  });
+}
 const placeAliases={
   "西贝莱斯广场":"Plaza de Cibeles Madrid","马德里机场 T4S":"Adolfo Suárez Madrid–Barajas Airport T4S","马德里机场 T4":"Adolfo Suárez Madrid–Barajas Airport T4","马德里 T4":"Adolfo Suárez Madrid–Barajas Airport T4","尼斯 T1":"Nice Côte d'Azur Airport Terminal 1","尼斯 T2":"Nice Côte d'Azur Airport Terminal 2",
   "Leonardo Hotel Madrid City Center":"Leonardo Hotel Madrid City Center","尼斯机场 T2":"Nice Côte d'Azur Airport Terminal 2","Hotel Campanile Prime - Nice Airport":"Hotel Campanile Prime Nice Airport",
@@ -694,6 +716,7 @@ addTransferStops();
 reorderTravelStops();
 linkPlacesInHeadings();
 setupPhotoGuides();
+setupGoogleMapsAppLinks();
 document.querySelector("#modeBtn").addEventListener("click",()=>document.body.classList.toggle("night"));
 updateCountdown();updateWorldClocks();setMode();setInterval(updateCountdown,1000);setInterval(updateWorldClocks,1000);setInterval(setMode,60000);
 </script>
