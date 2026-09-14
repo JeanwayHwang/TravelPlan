@@ -459,13 +459,13 @@ function setupGoogleMapsAppLinks(){
     const isIOS=/iPad|iPhone|iPod/.test(userAgent)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);
     const isAndroid=/Android/i.test(userAgent);
     if(isIOS){
-      window.open(webUrl.replace(/^https?:\/\/(?:www\.)?google\.com\//,"comgooglemapsurl://maps.google.com/"),"_blank","noopener");
+      window.location.href=webUrl.replace(/^https?:\/\/(?:www\.)?google\.com\//,"comgooglemapsurl://maps.google.com/");
       return;
     }
     if(isAndroid){
       const appPath=webUrl.replace(/^https?:\/\//,"");
       const fallback=encodeURIComponent(webUrl);
-      window.open(`intent://${appPath}#Intent;scheme=https;package=com.google.android.apps.maps;S.browser_fallback_url=${fallback};end`,`_blank`,`noopener`);
+      window.location.href=`intent://${appPath}#Intent;scheme=https;package=com.google.android.apps.maps;S.browser_fallback_url=${fallback};end`;
       return;
     }
     window.open(webUrl,"_blank","noopener");
