@@ -50,15 +50,16 @@ body.night{--paper:#172523;--ink:#f3eee2;--muted:#aebcb2;--line:#3a4a45;--card:#
 .card .detail-row:last-child{padding-bottom:0}
 .food-grid{display:block;overflow:hidden;padding:0;touch-action:pan-y;user-select:none}
 .food-grid::-webkit-scrollbar{display:none}
-.food-track{display:flex;gap:12px;padding-inline:32px;transition:transform .38s cubic-bezier(.22,.75,.25,1);will-change:transform}.food-city{flex:0 0 calc(100% - 64px);min-width:0}
+.food-track{display:flex;align-items:flex-start;gap:0;padding:0;transition:transform .38s cubic-bezier(.22,.75,.25,1);will-change:transform}.food-city{display:grid;align-content:start;grid-template-columns:repeat(auto-fit,minmax(min(100%,480px),1fr));column-gap:22px;flex:0 0 100%;min-width:0}.food-city h3{grid-column:1/-1}
 .food-progress{display:flex;align-items:center;gap:10px;margin:12px 4px 0}.food-progress-track{height:3px;flex:1;overflow:hidden;border-radius:999px;background:color-mix(in srgb,var(--teal) 18%,transparent)}.food-progress-fill{display:block;width:20%;height:100%;border-radius:inherit;background:var(--teal);transition:width .15s ease-out}.food-progress-count{min-width:34px;color:var(--muted);font-size:10px;font-variant-numeric:tabular-nums;text-align:right}
+.restaurant-item{min-width:0;padding:12px 0;border-top:1px solid var(--line)}.restaurant-item:first-of-type{border-top:1px solid var(--line)}.restaurant-head{display:flex;align-items:center;justify-content:flex-start;gap:8px;margin-bottom:8px}.food-city .restaurant-name{display:inline;min-width:0;padding:0;color:var(--ink);font-size:14px;font-weight:800;text-decoration:none}.food-city .restaurant-name:hover{color:var(--teal)}.food-city .xhs-button{display:inline-flex;flex:0 0 auto;align-items:center;padding:4px 8px;border:1px solid #d9283e;border-radius:5px;background:#d9283e;color:#fff;font-size:10px;font-weight:800;line-height:1.2;text-decoration:none;box-shadow:0 4px 10px rgba(201,31,55,.16);transition:background .2s ease,border-color .2s ease,transform .2s ease}.food-city .xhs-button:before{display:none}.food-city .xhs-button:hover{border-color:#b8172c;background:#b8172c;color:#fff;transform:translateY(-1px)}.restaurant-detail{display:grid;gap:5px;padding:9px 11px;border:1px solid color-mix(in srgb,var(--line) 78%,var(--gold));border-radius:7px;background:color-mix(in srgb,var(--gold) 6%,var(--card));font-size:12px}.restaurant-detail p{display:grid;grid-template-columns:34px minmax(0,1fr);gap:6px;margin:0;color:var(--muted)}.restaurant-detail b{color:var(--ink)}
 .stop h4{line-height:1.65}.photo-button{margin-left:8px;padding:3px 8px;border:1px solid color-mix(in srgb,var(--teal) 42%,var(--line));border-radius:6px;background:color-mix(in srgb,var(--teal) 8%,var(--card));color:var(--teal);font:inherit;font-size:11px;font-weight:700;line-height:1.35;vertical-align:middle;cursor:pointer;white-space:nowrap}.photo-button:hover{border-color:var(--teal);background:var(--teal);color:#fff}.photo-dialog{width:min(760px,calc(100vw - 24px));max-width:none;padding:0;border:0;border-radius:14px;background:transparent;color:var(--ink);overflow:visible}.photo-dialog::backdrop{background:rgba(10,25,23,.72);backdrop-filter:blur(8px)}.photo-sheet{position:relative;overflow:hidden;padding:28px 0 22px;background:var(--card);border:1px solid color-mix(in srgb,var(--line) 75%,var(--teal));border-radius:14px;box-shadow:0 28px 80px rgba(8,34,31,.32)}.photo-close{position:absolute;top:16px;right:16px;z-index:3;width:36px;height:36px;padding:0;border:1px solid var(--line);border-radius:50%;background:color-mix(in srgb,var(--card) 86%,transparent);color:var(--ink);font-size:24px;line-height:1;cursor:pointer;backdrop-filter:blur(8px)}.photo-copy{padding:0 64px 20px 28px}.photo-kicker{margin-bottom:5px;color:var(--teal);font-size:10px;font-weight:800;letter-spacing:.14em}.photo-copy h2{margin:10px 0;font-family:"Iowan Old Style",Baskerville,"Songti SC",serif;font-size:28px;line-height:1.2}.photo-copy p{max-width:590px;margin:7px 0 0;color:var(--muted);font-size:13px}.photo-stage{position:relative}.photo-carousel{display:flex;gap:12px;overflow-x:auto;padding:0 8%;scroll-padding-inline:8%;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;overscroll-behavior-x:contain}.photo-carousel::-webkit-scrollbar{display:none}.photo-slide{position:relative;flex:0 0 84%;height:min(54vh,440px);margin:0;overflow:hidden;border-radius:8px;background:color-mix(in srgb,var(--teal) 9%,var(--paper));scroll-snap-align:center;scroll-snap-stop:always}.photo-slide img{width:100%;height:100%;display:block;object-fit:cover}.photo-slide figcaption{position:absolute;right:12px;bottom:10px;padding:4px 7px;border-radius:4px;background:rgba(16,35,32,.7);color:#fff;font-size:10px;backdrop-filter:blur(6px)}.photo-nav{position:absolute;top:50%;z-index:2;width:38px;height:38px;padding:0;border:1px solid rgba(255,255,255,.55);border-radius:50%;background:rgba(16,35,32,.72);color:#fff;font-size:22px;line-height:1;cursor:pointer;transform:translateY(-50%);backdrop-filter:blur(8px)}.photo-prev{left:12px}.photo-next{right:12px}.photo-nav:disabled{opacity:.28;cursor:default}.photo-footer{display:flex;align-items:center;justify-content:center;gap:12px;padding:16px 28px 0}.photo-dots{display:flex;gap:6px}.photo-dot{width:18px;height:3px;border:0;border-radius:99px;background:color-mix(in srgb,var(--muted) 25%,transparent);transition:width .2s ease,background .2s ease}.photo-dot.active{width:32px;background:var(--teal)}.photo-count{min-width:34px;color:var(--muted);font-size:11px;font-variant-numeric:tabular-nums}.photo-dialog[open]{animation:photo-dialog-in .24s ease-out}.photo-dialog[open]::backdrop{animation:photo-backdrop-in .2s ease-out}@keyframes photo-dialog-in{from{opacity:0;transform:translateY(18px) scale(.98)}to{opacity:1;transform:none}}@keyframes photo-backdrop-in{from{opacity:0}to{opacity:1}}
   .stop h4{line-height:1.65}.photo-button{margin-left:8px;padding:3px 8px;border:1px solid color-mix(in srgb,var(--teal) 42%,var(--line));border-radius:6px;background:color-mix(in srgb,var(--teal) 8%,var(--card));color:var(--teal);font:inherit;font-size:11px;font-weight:700;line-height:1.35;vertical-align:middle;cursor:pointer;white-space:nowrap}.photo-button:hover{border-color:var(--teal);background:var(--teal);color:#fff}.photo-dialog{width:min(760px,calc(100vw - 24px));max-width:none;padding:0;border:0;border-radius:14px;outline:none;background:transparent;color:var(--ink);overflow:visible}.photo-dialog::backdrop{background:rgba(10,25,23,.72);backdrop-filter:blur(8px)}.photo-sheet{position:relative;overflow:hidden;padding:28px 0 22px;background:var(--card);border:1px solid color-mix(in srgb,var(--line) 75%,var(--teal));border-radius:14px;box-shadow:0 28px 80px rgba(8,34,31,.32)}.photo-close{position:absolute;top:16px;right:16px;z-index:3;width:36px;height:36px;padding:0;border:1px solid var(--line);border-radius:50%;background:color-mix(in srgb,var(--card) 86%,transparent);color:var(--ink);font-size:24px;line-height:1;cursor:pointer;backdrop-filter:blur(8px)}.photo-copy{padding:0 64px 20px 28px}.photo-kicker{margin-bottom:5px;color:var(--teal);font-size:10px;font-weight:800;letter-spacing:.14em}.photo-copy h2{margin:10px 0;font-family:"Iowan Old Style",Baskerville,"Songti SC",serif;font-size:28px;line-height:1.2}.photo-copy p{max-width:590px;margin:7px 0 0;color:var(--muted);font-size:13px}.photo-stage{position:relative}.photo-carousel{display:flex;gap:12px;overflow-x:auto;padding:0 8%;scroll-padding-inline:8%;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;overscroll-behavior-x:contain}.photo-carousel::-webkit-scrollbar{display:none}.photo-slide{position:relative;flex:0 0 84%;height:min(54vh,440px);margin:0;overflow:hidden;border-radius:8px;background:color-mix(in srgb,var(--teal) 9%,var(--paper));scroll-snap-align:center;scroll-snap-stop:always}.photo-slide img{width:100%;height:100%;display:block;object-fit:cover}.photo-slide figcaption{position:absolute;right:12px;bottom:10px;padding:4px 7px;border-radius:4px;background:rgba(16,35,32,.7);color:#fff;font-size:10px;backdrop-filter:blur(6px)}.photo-nav{position:absolute;top:50%;z-index:2;width:38px;height:38px;padding:0;border:1px solid rgba(255,255,255,.55);border-radius:50%;background:rgba(16,35,32,.72);color:#fff;font-size:22px;line-height:1;cursor:pointer;transform:translateY(-50%);backdrop-filter:blur(8px)}.photo-prev{left:12px}.photo-next{right:12px}.photo-nav:disabled{opacity:.28;cursor:default}.photo-footer{display:flex;align-items:center;justify-content:center;gap:12px;padding:16px 28px 0}.photo-dots{display:flex;gap:6px}.photo-dot{width:18px;height:3px;border:0;border-radius:99px;background:color-mix(in srgb,var(--muted) 25%,transparent);transition:width .2s ease,background .2s ease}.photo-dot.active{width:32px;background:var(--teal)}.photo-count{min-width:34px;color:var(--muted);font-size:11px;font-variant-numeric:tabular-nums}.photo-dialog[open]{animation:photo-dialog-in .24s ease-out}.photo-dialog[open]::backdrop{animation:photo-backdrop-in .2s ease-out}@keyframes photo-dialog-in{from{opacity:0;transform:translateY(18px) scale(.98)}to{opacity:1;transform:none}}@keyframes photo-backdrop-in{from{opacity:0}to{opacity:1}}
 .photo-carousel{display:block;overflow:hidden;padding:0;scroll-snap-type:none;touch-action:pan-y;user-select:none}.photo-track{display:flex;align-items:stretch;gap:12px;height:min(54dvh,440px);padding:0 8%;transition:transform .38s cubic-bezier(.22,.75,.25,1);will-change:transform}.photo-slide{height:100%;min-height:100%;max-height:100%;scroll-snap-align:none;scroll-snap-stop:normal}.photo-slide img{height:100%;min-height:100%;max-height:100%;pointer-events:none}
 .timeline:before{left:78px}.stop-dot{margin:6.55px auto 0;transform:translateX(4px)}.stop>div:nth-child(3){margin-left:-8px}.duration{display:inline-block;white-space:nowrap}.photo-button{display:inline-flex;align-items:center;justify-content:center;height:24px;padding-block:0;line-height:1}
 @keyframes hero-arrive{from{opacity:0;transform:scale(1.035)}to{opacity:1;transform:scale(1)}}
 @keyframes copy-arrive{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
-@media(max-width:700px){.wrap{padding:0 12px 16px}.hero.topbar{width:100vw;min-height:330px;margin:0 0 0 calc(50% - 50vw);padding:26px 16px;border-radius:0}.hero-image{object-position:67% 50%}.hero.topbar:after{background:linear-gradient(90deg,rgba(8,67,62,.72),rgba(13,76,70,.3) 76%),linear-gradient(0deg,rgba(18,58,52,.28),transparent 60%)}.hero-copy{width:100%}.hero .title{max-width:none;margin:9px 0 11px;font-size:clamp(25px,7.2vw,30px);letter-spacing:0;white-space:nowrap}.hero .subtitle{max-width:330px;font-size:11px}.hero .tiny-btn{top:14px;right:14px;width:42px;height:42px}.focus{margin-top:8px;padding:15px 14px}.focus h2{font-size:19px}.countdown{gap:5px;margin-top:9px}.count-unit{padding:7px 4px;gap:3px}.count-num{font-size:24px}.count-text{margin-bottom:2px;font-size:9px}.section-head{align-items:flex-end}.tab-panel>.section-head{padding-top:32px}.section-note{max-width:52%;text-align:right}.photo-dialog{width:calc(100vw - 16px)}.photo-sheet{padding-top:24px}.photo-copy{padding:0 16px 16px 20px}.photo-copy h2{font-size:22px}.photo-copy p{font-size:12px}.photo-close{top:12px;right:12px}.photo-carousel{gap:9px;padding:0 7%;scroll-padding-inline:7%}.photo-slide{flex-basis:86%;height:min(52vh,420px)}.photo-nav{width:34px;height:34px}.photo-prev{left:7px}.photo-next{right:7px}.photo-footer{padding-top:13px}}
+@media(max-width:700px){.wrap{padding:0 12px 16px}.hero.topbar{width:100vw;min-height:330px;margin:0 0 0 calc(50% - 50vw);padding:26px 16px;border-radius:0}.hero-image{object-position:67% 50%}.hero.topbar:after{background:linear-gradient(90deg,rgba(8,67,62,.72),rgba(13,76,70,.3) 76%),linear-gradient(0deg,rgba(18,58,52,.28),transparent 60%)}.hero-copy{width:100%}.hero .title{max-width:none;margin:9px 0 11px;font-size:clamp(25px,7.2vw,30px);letter-spacing:0;white-space:nowrap}.hero .subtitle{max-width:330px;font-size:11px}.hero .tiny-btn{top:14px;right:14px;width:42px;height:42px}.focus{margin-top:8px;padding:15px 14px}.focus h2{font-size:19px}.countdown{gap:5px;margin-top:9px}.count-unit{padding:7px 4px;gap:3px}.count-num{font-size:24px}.count-text{margin-bottom:2px;font-size:9px}.section-head{align-items:flex-end}.tab-panel>.section-head{padding-top:32px}.section-note{max-width:52%;text-align:right}.food-city{grid-template-columns:1fr}.restaurant-head{align-items:center}.photo-dialog{width:calc(100vw - 16px)}.photo-sheet{padding-top:24px}.photo-copy{padding:0 16px 16px 20px}.photo-copy h2{font-size:22px}.photo-copy p{font-size:12px}.photo-close{top:12px;right:12px}.photo-carousel{gap:9px;padding:0 7%;scroll-padding-inline:7%}.photo-slide{flex-basis:86%;height:min(52vh,420px)}.photo-nav{width:34px;height:34px}.photo-prev{left:7px}.photo-next{right:7px}.photo-footer{padding-top:13px}}
 @media(max-width:700px){#days .section-head{gap:4px}#days .section-head h2{flex:0 0 auto;white-space:nowrap}#days .section-note{max-width:none;flex:0 0 auto;font-size:clamp(8px,2.55vw,10px);white-space:nowrap}}
 @media(max-width:700px){.photo-carousel{padding:0}.photo-track{gap:9px;height:min(52dvh,420px);padding-inline:7%}}
 @media(max-width:700px){.stop{grid-template-columns:54px 12px minmax(0,1fr);column-gap:4px}.stop-time{transform:translateX(-8px)}.timeline:before{left:56px}.stop-dot{transform:translateX(-8px)}.stop>div:nth-child(3){min-width:0}.stop h4 .tag{padding-inline:5px}.photo-button{margin-left:4px;padding-inline:5px}}
@@ -291,6 +292,67 @@ function setupTabs(){
     });
   });
 }
+const restaurantNotes={
+  "Chocolatería San Ginés":["现炸西班牙油条配浓稠热巧克力，适合早餐或夜宵。","距马约尔广场约450米，步行约6分钟。"],
+  "Mesón del Champiñón":["招牌铁板蒜香蘑菇塞香肠，趁热一口吃最香。","距圣米盖尔市场约120米，步行约2分钟。"],
+  "Caracola Antón Martín":["主打层次酥脆的肉桂卷与当日手作甜点。","距安东马丁地铁站约180米，步行约3分钟。"],
+  "Restaurant La Campana":["马德里经典炸鱿鱼三明治，外脆内嫩、分量扎实。","距马约尔广场约100米，步行约2分钟。"],
+  "Vinitus Gran Via":["选择丰富的西班牙小食与海鲜饭，适合多人分享。","距格兰大道地铁站约350米，步行约5分钟。"],
+  "Casa Labra":["百年老店招牌炸鳕鱼和鳕鱼可乐饼，咸香酥脆。","距太阳门广场约250米，步行约4分钟。"],
+  "El Sur de Moratín":["主打传统西班牙家常菜，海鲜饭和烤章鱼口碑稳定。","距普拉多博物馆约650米，步行约9分钟。"],
+  "La Castela":["精致西班牙小食与炖牛尾，适合悠闲晚餐。","距丽池公园北门约550米，步行约8分钟。"],
+  "Ruhl Plage":["海边餐厅主打法式海鲜、沙拉与蔚蓝海岸景观。","位于英国人散步大道海滩边，距马塞纳广场约650米。"],
+  "Le Galet":["主打地中海烤鱼、海鲜意面和海景午餐。","距蓝椅子约400米，沿海滨步行约6分钟。"],
+  "Rouge Restaurant":["现代法餐搭配自然酒，小盘菜精致且富有创意。","距尼斯老城约500米，步行约7分钟。"],
+  "Chez Acchiardo":["尼斯传统家常菜，推荐尼斯沙拉、炖牛肉和酿蔬菜。","位于尼斯老城内，距Cours Saleya市集约350米。"],
+  "Bistrot Victoires":["高性价比法式小酒馆，主打油封鸭腿与牛排薯条。","距卢浮宫约750米，步行约10分钟。"],
+  "Biubiu 麻辣烫":["自选食材现煮麻辣烫，适合旅行中途换一顿中国胃。","距巴黎歌剧院约700米，步行约10分钟。"],
+  "Les Antiquaires":["经典巴黎小酒馆菜，推荐油封鸭腿和法式洋葱汤。","距奥赛博物馆约300米，步行约4分钟。"],
+  "Pain de mie":["主打松软吐司、法式烘焙和便携早餐。","距巴黎圣母院约700米，步行约10分钟。"],
+  "Pink Mamma":["多层意式餐厅，主打松露意面、披萨和复古空间。","距红磨坊约500米，步行约7分钟。"],
+  "Le Train Bleu":["华丽宫殿式法餐厅，主打经典法菜与旅行仪式感。","位于巴黎里昂火车站内，距塞纳河约500米。"],
+  "Jon Cake & Coffee":["巴斯克流心芝士蛋糕是招牌，口味每日轮换。","距巴塞罗那主教堂约650米，步行约9分钟。"],
+  "La Flauta":["主打现点现做的Tapas与细长脆面包三明治。","距巴特罗之家约750米，步行约10分钟。"],
+  "Vinitus":["海鲜、火腿和热Tapas选择丰富，翻台快、氛围热闹。","距巴特罗之家约450米，步行约6分钟。"],
+  "Bar Cañete":["开放式吧台供应海鲜与传统Tapas，食材新鲜。","距波盖利亚市场约450米，步行约6分钟。"],
+  "El Glop Gaudí":["加泰罗尼亚风味海鲜饭与炭烤肉，适合正餐。","距圣家堂约850米，步行约12分钟。"],
+  "El Xampanyet":["百年小酒馆主打起泡酒、凤尾鱼与腌渍Tapas。","距巴塞罗那主教堂约550米，步行约8分钟。"],
+  "Maria Catita":["葡萄牙海鲜饭、烤章鱼和海鲜汤，分量适合分享。","距商业广场约500米，步行约7分钟。"],
+  "Arrozaria · Uma":["招牌海鲜焖饭锅鲜味浓郁，是老城经典选择。","距奥古斯塔街约200米，步行约3分钟。"],
+  "Breakfast Lovers":["主打班尼迪克蛋、松饼与精品咖啡的早午餐。","距圣若热城堡约700米，步行约10分钟。"],
+  "Pomme Eatery":["清爽健康的早午餐与果昔碗，摆盘精致。","距比卡升降机约550米，步行约8分钟。"]
+};
+function setupRestaurantCards(){
+  foodSection?.querySelectorAll(".food-city>a").forEach(link=>{
+    const name=link.textContent.trim();
+    const cityCard=link.parentElement;
+    const [specialty,location]=restaurantNotes[name]||["当地特色料理，适合行程中顺路体验。","具体距离请点击餐厅名后在地图中查看。"];
+    const item=document.createElement("div");
+    item.className="restaurant-item";
+    const head=document.createElement("div");
+    head.className="restaurant-head";
+    link.className="restaurant-name";
+    link.rel="noopener";
+    const xhs=document.createElement("a");
+    xhs.className="xhs-button";
+    xhs.href=`xhsdiscover://search/result?keyword=${encodeURIComponent(name)}`;
+    xhs.dataset.webFallback=`https://www.xiaohongshu.com/search_result?keyword=${encodeURIComponent(name)}`;
+    xhs.setAttribute("aria-label",`在小红书搜索 ${name}`);
+    xhs.textContent="小红书";
+    head.append(link,xhs);
+    const detail=document.createElement("div");
+    detail.className="restaurant-detail";
+    detail.innerHTML=`<p><b>主打</b><span>${specialty}</span></p><p><b>位置</b><span>${location}</span></p>`;
+    item.append(head,detail);
+    cityCard.append(item);
+  });
+  foodSection?.addEventListener("click",event=>{
+    const button=event.target.closest(".xhs-button");
+    if(!button)return;
+    const timer=window.setTimeout(()=>{if(!document.hidden)window.location.assign(button.dataset.webFallback)},900);
+    document.addEventListener("visibilitychange",()=>{if(document.hidden)window.clearTimeout(timer)},{once:true});
+  });
+}
 function setupFoodCarousel(){
   const grid=foodSection?.querySelector(".food-grid");
   const cards=grid?[...grid.querySelectorAll(".food-city")]:[];
@@ -332,6 +394,7 @@ function setupFoodCarousel(){
 }
 moveContentToTabs();
 setupTabs();
+setupRestaurantCards();
 setupFoodCarousel();
 addWeatherToDays();
 updateWeatherForecasts();
