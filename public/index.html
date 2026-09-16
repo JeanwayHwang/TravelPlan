@@ -474,7 +474,7 @@ function setupGoogleMapsAppLinks(){
 }
 const placeAliases={
   "皇马体育城":"Ciudad Real Madrid, Cmo. de Sintra, s/n, Hortaleza, 28055 Valdebebas, Madrid","西贝莱斯广场":"Plaza de Cibeles Madrid","马德里机场 T4S":"Adolfo Suárez Madrid–Barajas Airport T4S","马德里机场 T4":"Adolfo Suárez Madrid–Barajas Airport T4","马德里 T4":"Adolfo Suárez Madrid–Barajas Airport T4","尼斯 T1":"Nice Côte d'Azur Airport Terminal 1","尼斯 T2":"Nice Côte d'Azur Airport Terminal 2",
-  "Leonardo Hotel":"Leonardo Hotel","尼斯机场 T2":"Nice Côte d'Azur Airport Terminal 2","Hotel Campanile Prime - Nice Airport":"Hotel Campanile Prime Nice Airport",
+  "Leonardo Hotel":"Leonardo Hotel Madrid City Center, C. de Alberto Aguilera, 18, Madrid","尼斯机场 T2":"Nice Côte d'Azur Airport Terminal 2","Hotel Campanile Prime - Nice Airport":"Hotel Campanile Prime Nice Airport",
   "巴黎奥利机场":"Paris Orly Airport","巴黎奥利 T1":"Paris Orly Airport Terminal 1","巴黎奥利 T3":"Paris Orly Airport Terminal 3","巴黎奥利机场 T3":"Paris Orly Airport Terminal 3","奥利 T1":"Paris Orly Airport Terminal 1","巴塞罗那机场 T1":"Barcelona El Prat Airport Terminal 1","巴塞罗那 T1":"Barcelona El Prat Airport Terminal 1","里斯本 T2":"Humberto Delgado Airport Terminal 2 Lisbon","里斯本 T1":"Humberto Delgado Airport Terminal 1 Lisbon",
   "巴塞罗那主教堂":"Barcelona Cathedral","巴塞罗那海滩":"Barceloneta Beach","亲吻墙":"The World Begins With A Kiss Barcelona","The Moods Oasis":"The Moods Oasis Barcelona",
   "芒通老城":"Menton Old Town","圣米歇尔教堂":"Basilica of Saint Michael the Archangel Menton","蒙特卡洛赌场":"Casino de Monte-Carlo",
@@ -732,8 +732,9 @@ function reorderTravelStops(){
   });
 }
 function mapEmbedUrl(stops){
-  const destination=stops.slice(1).map(stop=>encodeURIComponent(stop)).join("+to:");
-  return `https://maps.google.com/maps?saddr=${encodeURIComponent(stops[0])}&daddr=${destination}&dirflg=r&output=embed`;
+  const places=stops.map(stop=>placeAliases[stop]||stop);
+  const destination=places.slice(1).map(place=>encodeURIComponent(place)).join("+to:");
+  return `https://maps.google.com/maps?saddr=${encodeURIComponent(places[0])}&daddr=${destination}&dirflg=d&output=embed`;
 }
 document.querySelectorAll(".day").forEach((day,index)=>{
   const stops=routes[index],actions=day.querySelector(".day-actions"),body=day.querySelector(".day-body");
